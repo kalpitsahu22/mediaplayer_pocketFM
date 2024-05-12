@@ -21,19 +21,20 @@ Node.js installed on your machine
 Git installed on your machine (optional, if you want to clone the repository)
 Installation
 Clone this repository to your local machine or download the ZIP file and extract it.
-
 git clone https://github.com/yourusername/custom-audio-video-player.git
+
 Navigate to the project directory.
-
 cd custom-audio-video-player
-Install dependencies.
 
+Install dependencies.
 npm install
+
 Running the Project
 Start the development server.
-
 npm start
+
 Open your web browser and navigate to http://localhost:3000 to view the player.
+
 Usage
 Click on the play/pause button to start or pause media playback.
 Use the previous and next buttons to navigate between media files.
@@ -53,6 +54,7 @@ W: Minimize (custom functionality)
 N: Play next media
 P: Play previous media
 Contributing
+
 Contributions are welcome! If you have any ideas for improvements or new features, feel free to open an issue or submit a pull request.
 
 License
