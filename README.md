@@ -21,7 +21,7 @@ Node.js installed on your machine
 Git installed on your machine (optional, if you want to clone the repository)
 Installation
 Clone this repository to your local machine or download the ZIP file and extract it.
-git clone https://github.com/yourusername/custom-audio-video-player.git
+git clone https://github.com/kalpitsahu22/mediaplayer_pocketFM
 
 Navigate to the project directory.
 cd custom-audio-video-player
