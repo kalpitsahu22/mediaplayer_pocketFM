@@ -132,7 +132,6 @@ const Controls = forwardRef(
     const [isAudioReady, setIsAudioReady] = useState(false);
 
     useEffect(() => {
-      // Check if the current URL is an MP3 file and start playing when ready
       if (currentURL.endsWith(".mp3")) {
         setIsAudioReady(true);
       }
@@ -146,11 +145,50 @@ const Controls = forwardRef(
       setAnchorEl(null);
     };
 
+    const handleKeyPress = (event) => {
+      switch (event.key) {
+        case " ":
+          onPlayPause();
+          break;
+
+        case "ArrowRight":
+          onFastForward();
+          break;
+        case "ArrowLeft":
+          onRewind();
+          break;
+        case "m":
+          onMute();
+          break;
+        case "f":
+          onToggleFullScreen();
+          break;
+        case "Escape":
+          onToggleFullScreen();
+          break;
+        case "n":
+          handleClickNext();
+          break;
+        case "p":
+          handleClickPrevious();
+          break;
+        default:
+          break;
+      }
+    };
+
+    useEffect(() => {
+      document.addEventListener("keydown", handleKeyPress);
+      return () => {
+        document.removeEventListener("keydown", handleKeyPress);
+      };
+    });
+
     const open = Boolean(anchorEl);
     const id = open ? "simple-popover" : undefined;
 
     return (
-      <div ref={ref} className={classes.controlsWrapper}>
+      <div ref={ref} className={classes.controlsWrapper} tabIndex={-1}>
         <Grid
           container
           direction="column"
@@ -165,9 +203,7 @@ const Controls = forwardRef(
             style={{ padding: 16 }}
           >
             <Grid item>
-              <Typography variant="h5" style={{ color: "#fff" }}>
-                Video Title
-              </Typography>
+              <Typography variant="h5" style={{ color: "#fff" }}></Typography>
             </Grid>
             <Grid item>
               <Button

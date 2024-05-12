@@ -154,13 +154,10 @@ const format = (seconds) => {
 let count = 0;
 
 const URLS = [
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
   "http://commondatastorage.googleapis.com/gtv-videos-bucket/big_buck_bunny_1080p.mp4",
+  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
   "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
   "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
-  "https://storage.googleapis.com/media-session/elephants-dream/the-wires.mp3",
-  "https://storage.googleapis.com/media-session/sintel/snow-fight.mp3",
 ];
 
 function App() {
@@ -174,7 +171,6 @@ function App() {
   const [currentURLIndex, setCurrentURLIndex] = useState(0);
 
   const [state, setState] = useState({
-    // pip: true,
     playing: true,
     controls: false,
     light: false,
@@ -188,7 +184,6 @@ function App() {
     seeking: false,
   });
 
-  // const playerRef = useRef(null);
   const playerContainerRef = useRef(null);
   const controlsRef = useRef(null);
   const canvasRef = useRef(null);
@@ -217,7 +212,7 @@ function App() {
   };
 
   const handleProgress = (changeState) => {
-    if (count > 0) {
+    if (count > 2) {
       controlsRef.current.style.visibility = "hidden";
       count = 0;
     }
