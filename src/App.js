@@ -345,7 +345,7 @@ function App() {
     <>
       <AppBar position="fixed">
         <Toolbar>
-          <Typography>React Video Player</Typography>
+          <Typography>Pocket Media Player</Typography>
         </Toolbar>
       </AppBar>
       <Toolbar />
